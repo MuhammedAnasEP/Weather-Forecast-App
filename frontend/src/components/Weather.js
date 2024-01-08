@@ -18,16 +18,12 @@ const Weather = () => {
     }
 
     const body = JSON.stringify({
-      username,
-      email,
-      password,
-      firstname,
-      lastname
+      search
     });
 
     axios.post(weather, body, {headers: headers})
       .then((response)=>{
-        if (response.status == 200){
+        if (response.status === 200){
             Swal.fire({
               position: "center",
               icon: "success",
@@ -38,10 +34,11 @@ const Weather = () => {
         }
       }).catch((error)=>{
         if (error){
+          console.log(error)
           Swal.fire({
             position: "center",
             icon: "error",
-            title: error.response.data,
+            title: "Error",
             showConfirmButton: false,
             timer: 2000,
           });
