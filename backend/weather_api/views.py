@@ -11,15 +11,18 @@ from .serializers import LocationSerializer
 def weather(request):
     name = request.data['name']
     api_key = '06953e9773affc401547bd098ef3d7ff'
-    url = f'http://api.openweathermap.org/data/2.5/weather?q={name}&units=imperial&appid={api_key}'
-
-    old_weather = Location.objects.filter(name__iexact = name)
-
     try:
-        city_weather = requests.get(url).json()
+        old_weather = Location.objects.filter(name__iexact = name)
+        old_weather = old_weather[0]
+    except:
+        pass
+    try:
+        url = f'http://api.openweathermap.org/data/2.5/weather?q={name}&units=imperial&appid={api_key}'
+        city_weather = requests.get(url).json()     
         temperature = round((city_weather['main']['temp'] - 32) * (5 / 9), 2)
         description = city_weather['weather'][0]['description']
         if old_weather:
+            print(1)
             old_weather.temperature = temperature
             old_weather.description = description
             old_weather.last_updated = timezone.now()
@@ -32,8 +35,8 @@ def weather(request):
         searializer = LocationSerializer(weather, many = False)
         return Response(searializer.data)
 
-    except Exception as e:
-        return Response(f'Error fetching weather data: {e}')
+    except:
+        return Response(status=400)
     
 @api_view(['GET'])
 def search_list(request):

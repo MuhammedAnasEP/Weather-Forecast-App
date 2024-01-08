@@ -3,6 +3,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 20px;
+    background-color: bisque;
   }
   
   .app {
@@ -38,6 +39,13 @@ body {
     margin-top: 10px;
   }
   
+  .List{
+    margin: 0 auto;
+    display: block;
+    align-items: center;
+    text-align: center;
+  }
+
   /* City List styles */
   .city-list {
     list-style: none;
@@ -49,11 +57,14 @@ body {
   .city {
     margin-bottom: 10px;
     font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
   }
   
   /* Forecast Section styles */
   .forecast-section {
     margin-bottom: 20px;
+    text-align: center;
   }
   
   .forecast-section h2 {
@@ -61,19 +72,17 @@ body {
     margin-bottom: 10px;
   }
   
-  .forecast-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+
   
   /* Forecast Card styles */
   .forecast-card {
-    width: 25%;
+    
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
   }
   
   .forecast-card h3 {
@@ -89,6 +98,8 @@ body {
     font-size: 18px;
     font-weight: bold;
   }
+
+
   
   /* Responsive styles (optional) */
   @media (max-width: 600px) {
