@@ -1,0 +1,103 @@
+/* Global styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Header styles */
+  .header {
+    display: block;
+    align-items: center;
+
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .add-city-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  /* City List styles */
+  .city-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .city {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Forecast Section styles */
+  .forecast-section {
+    margin-bottom: 20px;
+  }
+  
+  .forecast-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .forecast-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Forecast Card styles */
+  .forecast-card {
+    width: 25%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .forecast-card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .weather-icon {
+    font-size: 36px;
+    /* Adjust for weather icon library */
+  }
+  
+  .temperature {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Responsive styles (optional) */
+  @media (max-width: 600px) {
+    .forecast-cards {
+      flex-direction: column;
+    }
+  
+    .forecast-card {
+      width: 100%;
+    }
+  }
+  
